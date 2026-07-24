@@ -105,4 +105,11 @@ Esta infraestructura servirá como base para integrar Pressbooks y los demás co
 
 ## Mejoras futuras
 
+## Progreso del Nivel 2
+
+-  Arquitectura diseñada.
+-  PostgreSQL desplegado.
+-  MariaDB desplegado.
+-  Investigación e implementación de Pressbooks.
+
 ## Autor

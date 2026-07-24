@@ -80,3 +80,15 @@ MariaDB será utilizada exclusivamente por Pressbooks, mientras que PostgreSQL p
 ## Decisiones Técnicas
 
 Se decidió mantener PostgreSQL para la API propia y utilizar MariaDB únicamente para Pressbooks, respetando la arquitectura soportada oficialmente por la aplicación.
+
+## Investigación previa
+
+Antes de iniciar la instalación se revisó la documentación oficial de Pressbooks con el objetivo de identificar:
+
+- Método de instalación recomendado.
+- Dependencias requeridas.
+- Compatibilidad con Docker.
+- Requisitos de base de datos.
+- Posibles limitaciones.
+
+Esta revisión permitió planificar la arquitectura antes de comenzar la implementación.
