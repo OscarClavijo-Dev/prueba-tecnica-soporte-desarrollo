@@ -28,6 +28,10 @@
 | VS Code | Entorno de desarrollo. |
 | Fedora 44 | Sistema operativo de desarrollo. |
 
+## Arquitectura en construcción
+
+Actualmente la solución evoluciona desde una arquitectura de un solo servicio (PostgreSQL) hacia una arquitectura multicontenedor basada en Docker Compose, donde cada componente tendrá una responsabilidad específica.
+
 ## Requisitos
 
 ## Entorno de desarrollo

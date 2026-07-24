@@ -14,6 +14,21 @@ Por esta razón requiere una base de datos compatible con MySQL/MariaDB y un ent
 
 ---
 
+## Componentes de la arquitectura
+
+La implementación de Pressbooks utilizará una arquitectura multicontenedor.
+
+Los componentes principales son:
+
+- Pressbooks
+- MariaDB
+- Red Docker compartida
+- Volúmenes persistentes
+
+Cada servicio se ejecutará en un contenedor independiente y se comunicará mediante la red `backend` definida en Docker Compose.
+
+Esta aproximación facilita el mantenimiento, la escalabilidad y el aislamiento de responsabilidades entre los distintos componentes.
+
 ## Arquitectura Inicial
 
 Durante este Sprint se integrarán los siguientes componentes:
@@ -28,6 +43,21 @@ Posteriormente se integrarán:
 - API externa
 
 ---
+
+## Selección del motor de base de datos
+
+Aunque el proyecto ya dispone de PostgreSQL para la futura API propia, Pressbooks requiere una base de datos compatible con MySQL.
+
+Por esta razón se incorporó un servicio MariaDB independiente.
+
+Esta decisión permite mantener la compatibilidad con Pressbooks sin afectar la arquitectura planteada para los siguientes niveles de la prueba.
+
+### Beneficios
+
+- Compatibilidad oficial con Pressbooks.
+- Separación de responsabilidades.
+- Arquitectura desacoplada.
+- Posibilidad de reutilizar PostgreSQL para FastAPI.
 
 ## Decisiones Técnicas
 
