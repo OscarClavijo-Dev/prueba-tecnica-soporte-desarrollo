@@ -6,6 +6,12 @@
 
 ## Arquitectura
 
+### Arquitectura inicial
+
+    La infraestructura del proyecto se construirá de manera incremental.
+
+    El primer servicio implementado será PostgreSQL mediante Docker Compose. Posteriormente se integrarán MariaDB, Pressbooks y FastAPI sobre la misma infraestructura.
+    
 ## Tecnologías
 
 | Tecnología | Propósito |
