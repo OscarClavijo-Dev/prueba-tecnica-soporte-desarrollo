@@ -24,7 +24,7 @@
 
 ## Requisitos
 
-    ## Entorno de desarrollo
+## Entorno de desarrollo
 
     El proyecto fue desarrollado sobre el siguiente entorno:
 
@@ -33,9 +33,19 @@
     | Sistema Operativo | Fedora 44 |
     | Editor | Visual Studio Code |
     | Control de versiones | Git |
-    | Contenedores | Docker CE (en proceso de instalación) |
+    | Contenedores | Docker CE  |
     | Orquestación | Docker Compose |
 
+    El proyecto fue desarrollado sobre Fedora 44 utilizando Docker como plataforma de contenedores.
+
+### Componentes instalados
+
+    - Docker Engine
+    - Docker CLI
+    - Docker Compose
+    - Docker Desktop
+
+    Docker Desktop se emplea únicamente como herramienta gráfica para administrar los recursos del proyecto durante el desarrollo.
 
 ## Herramientas utilizadas
 
