@@ -3,11 +3,13 @@ services:
     image: postgres:17
     container_name: postgres_db
     restart: unless-stopped
-
+  
+  
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      
 
     ports:
       - "5433:5432"
@@ -18,8 +20,27 @@ services:
     networks:
       - backend
 
+  mariadb:
+    image: mariadb:11
+    container_name: mariadb_pressbooks
+    restart: unless-stopped
+
+    environment:
+      MARIADB_DATABASE: ${MARIADB_DATABASE}
+      MARIADB_USER: ${MARIADB_USER}
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+
+
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+    networks:
+      - backend
+
 volumes:
   postgres_data:
+  mariadb_data:
 
 networks:
   backend:

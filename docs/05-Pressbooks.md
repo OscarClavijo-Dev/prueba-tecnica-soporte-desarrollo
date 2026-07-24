@@ -52,6 +52,24 @@ Por esta razón se incorporó un servicio MariaDB independiente.
 
 Esta decisión permite mantener la compatibilidad con Pressbooks sin afectar la arquitectura planteada para los siguientes niveles de la prueba.
 
+
+## Implementación de MariaDB
+
+Se implementó un contenedor independiente para MariaDB como base de datos de Pressbooks.
+
+### Decisiones tomadas
+
+- Se utilizó la imagen oficial `mariadb:11`.
+- Se definió un nombre explícito para el contenedor.
+- Se configuró el reinicio automático mediante `restart: unless-stopped`.
+- Se utilizaron variables de entorno para desacoplar la configuración.
+- Se creó un volumen persistente (`mariadb_data`) para conservar la información.
+- Se conectó el servicio a la red `backend`.
+
+### Justificación
+
+MariaDB será utilizada exclusivamente por Pressbooks, mientras que PostgreSQL permanecerá destinado a la API propia que se desarrollará en niveles posteriores.
+
 ### Beneficios
 
 - Compatibilidad oficial con Pressbooks.
