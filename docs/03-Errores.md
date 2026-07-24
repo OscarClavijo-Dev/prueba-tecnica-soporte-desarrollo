@@ -43,3 +43,41 @@ Se volvió al paso de configuración del repositorio oficial de Docker para agre
 ### Lección aprendida
 
 Antes de instalar paquetes desde un repositorio externo, es recomendable verificar que dicho repositorio quedó registrado correctamente mediante `dnf repolist` y comprobando la existencia del archivo correspondiente en `/etc/yum.repos.d/`.
+
+## Error 002
+
+### Fecha
+
+24/07/2026
+
+### Etapa
+
+Sprint 1 - Configuración de Docker Compose
+
+### Comando ejecutado
+
+```bash
+docker compose up -d
+```
+
+### Error obtenido
+
+```text
+Error response from daemon:
+ports are not available:
+listen tcp 0.0.0.0:5432:
+bind: address already in use
+```
+
+### Análisis preliminar
+
+Docker no pudo iniciar el contenedor porque el puerto 5432 del sistema anfitrión ya estaba siendo utilizado por otro proceso.
+
+### Posibles causas
+
+- PostgreSQL instalado en el sistema operativo.
+- Otro contenedor Docker.
+- Un servicio ejecutándose mediante Podman.
+
+### Estado
+

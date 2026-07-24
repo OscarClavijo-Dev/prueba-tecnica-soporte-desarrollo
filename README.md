@@ -11,7 +11,7 @@
     La infraestructura del proyecto se construirá de manera incremental.
 
     El primer servicio implementado será PostgreSQL mediante Docker Compose. Posteriormente se integrarán MariaDB, Pressbooks y FastAPI sobre la misma infraestructura.
-    
+
 ## Tecnologías
 
 | Tecnología | Propósito |
@@ -60,6 +60,24 @@ Además del motor de Docker se instaló Docker Desktop para facilitar la adminis
 ## Instalación
 
 ## Variables de Entorno
+
+    El proyecto utiliza un archivo `.env` para almacenar la configuración sensible y facilitar la parametrización del entorno.
+
+    Actualmente se definen las credenciales iniciales de PostgreSQL mediante variables de entorno consumidas por Docker Compose.
+
+## Estado actual del proyecto
+
+Actualmente el proyecto cuenta con una infraestructura base implementada mediante Docker Compose.
+
+Componentes disponibles:
+
+- PostgreSQL 17
+- Docker Network (`backend`)
+- Docker Volume (`postgres_data`)
+- Variables de entorno mediante `.env`
+
+Esta infraestructura servirá como base para integrar Pressbooks y los demás componentes solicitados en la prueba técnica.
+
 
 ## Estructura del proyecto
 

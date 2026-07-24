@@ -55,22 +55,28 @@ Preparar un entorno de desarrollo reproducible basado en Docker para ejecutar to
 
 ## Verificación
 
-    Se verificó correctamente:
+    Se ejecutaron las siguientes validaciones para comprobar el correcto funcionamiento del entorno:
 
-- Docker Engine
-- Docker CLI
-- Docker Compose
-- Docker Desktop
+    - Docker Engine
+    - Docker Compose
+    - Docker Desktop
+    - Contenedor PostgreSQL
+    - Volumen persistente
+    - Red Docker
 
-Comandos utilizados:
+    Comandos utilizados:
 
-docker --version
+    ```bash
+    docker --version
+    docker compose version
+    docker info
+    docker compose up -d
+    docker ps
+    docker logs postgres_db
+    docker volume ls
+    docker network ls
 
-docker compose version
 
-docker info
-
-docker run hello-world
 
 ## Problemas Encontrados
 
