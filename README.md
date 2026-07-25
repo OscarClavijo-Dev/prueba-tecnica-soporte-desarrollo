@@ -4,22 +4,27 @@
 
 # Descripción
 
+Este proyecto corresponde al desarrollo de la prueba técnica para el proceso de selección del cargo de Soporte y Desarrollo.
+
+La solución fue diseñada utilizando una arquitectura basada en contenedores Docker, permitiendo desacoplar los diferentes servicios y facilitar su despliegue, mantenimiento y escalabilidad.
+
+Durante el desarrollo se priorizó la documentación de cada decisión técnica, la validación incremental de los componentes y el uso de buenas prácticas de infraestructura.
+
 Breve descripción del proyecto.
 
 ---
 
-# Objetivo
+## Objetivo
 
-Objetivo general de la prueba técnica.
-
+Diseñar e implementar una infraestructura basada en Docker Compose que permita desplegar los componentes solicitados por la prueba técnica, documentando cada fase del proceso, las decisiones tomadas y las posibles alternativas de implementación cuando existan limitaciones técnicas.
 ---
 
-# Estado del proyecto
+## Estado del proyecto
 
 | Nivel | Estado |
 |--------|--------|
-| Nivel 1 | ✅ Finalizado |
-| Nivel 2 | 🔄 En desarrollo |
+| Nivel 1 | ✅ Completado |
+| Nivel 2 | 🔄 En implementación |
 | Nivel 3 | ⏳ Pendiente |
 | Nivel 4 | ⏳ Pendiente |
 | Nivel 5 | ⏳ Pendiente |
@@ -28,94 +33,68 @@ Objetivo general de la prueba técnica.
 
 # Arquitectura
 
-## Arquitectura objetivo
+## Arquitectura
 
+```text
+                Usuario
+                    │
+                    ▼
+             WordPress (Temporal)
+                    │
+                    ▼
+               MariaDB 11
+                    │
+                    ▼
+               FastAPI (Pendiente)
+                    │
+                    ▼
+             PostgreSQL 17
+                    │
+                    ▼
+              API Externa
 ```
 
-Usuario
-
-↓
-
-Pressbooks
-
-↓
-
-MariaDB
-
-↓
-
-FastAPI
-
-↓
-
-PostgreSQL
-
-↓
-
-API Externa
-
-```
-
----
+La arquitectura fue diseñada para permitir reemplazar posteriormente WordPress por Pressbooks reutilizando la infraestructura existente.
 
 # Tecnologías utilizadas
 
-(tabla)
+(| Tecnología     | Uso                      |
+| -------------- | ------------------------ |
+| Docker Engine  | Contenedores             |
+| Docker Compose | Orquestación             |
+| Docker Desktop | Administración           |
+| PostgreSQL 17  | Base de datos API        |
+| MariaDB 11     | Base de datos Pressbooks |
+| WordPress      | Plataforma temporal      |
+| FastAPI        | API propia (pendiente)   |
+| Git            | Versionamiento           |
+| GitHub         | Repositorio              |
+
 
 ---
 
-# Entorno de desarrollo
+## Componentes implementados
 
-(tabla)
+- ✅ Docker Engine
+- ✅ Docker Compose
+- ✅ Docker Desktop
+- ✅ PostgreSQL
+- ✅ MariaDB
+- ✅ WordPress (Infraestructura preparada)
+- ⏳ FastAPI
+- ⏳ API Externa
 
----
-
-# Estructura del proyecto
-
-```
-
-docs/
-docker-compose.yml
-README.md
-.env.example
-...
-
-```
-
----
-
-# Instalación
-
-## Requisitos
-
-## Clonar
-
-## Variables de entorno
-
-## Docker Compose
-
----
-
-# Componentes implementados
-
-## Docker
-
-## PostgreSQL
-
-## MariaDB
-
-## Pressbooks (En desarrollo)
-
-## FastAPI (Pendiente)
-
----
-
-# Documentación
+## Documentación
 
 | Documento | Descripción |
 |------------|-------------|
-
----
+| 01-Configuracion-Git.md | Configuración inicial del repositorio |
+| 02-Docker.md | Instalación de Docker |
+| 03-PostgreSQL.md | Configuración de PostgreSQL |
+| 04-Entorno.md | Configuración del entorno |
+| 05-Pressbooks.md | Investigación e implementación |
+| 06-Decisiones-Tecnicas.md | Justificación de las decisiones |
+| 07-Intento-Implementacion-Pressbooks.md | Evidencia del intento de implementación |
 
 # Evidencias
 
@@ -133,15 +112,25 @@ Aquí iremos agregando cada problema solucionado.
 
 ---
 
-# Decisiones técnicas
+## Decisiones técnicas
 
-Aquí justificaremos todas las decisiones importantes.
+La implementación de Pressbooks se investigó siguiendo la documentación oficial.
 
-La instalación oficial de Pressbooks no ofrece un docker-compose.yml listo para producción o evaluación. La documentación está orientada a instalar Pressbooks sobre un servidor configurado (recomiendan Bedrock), con PHP, un servidor web y varias dependencias adicionales para exportación como Ghostscript, ImageMagick, Poppler y otras herramientas.
----
+Durante el proceso se identificó que el proyecto no distribuye una imagen Docker oficial y que su instalación requiere un entorno PHP con múltiples dependencias adicionales.
+
+Debido al tiempo disponible para la prueba y conforme a las condiciones establecidas en el documento de evaluación, se preparó una infraestructura compatible utilizando WordPress, documentando el proceso y la estrategia para una futura migración hacia Pressbooks.
+
+La explicación completa se encuentra en:
+
+docs/06-Decisiones-Tecnicas.md
 
 # Mejoras futuras
 
+- Implementar Pressbooks sobre la infraestructura existente.
+- Desarrollar la API propia con FastAPI.
+- Integrar la API externa solicitada.
+- Incorporar pruebas automatizadas.
+- Implementar CI/CD.
 ---
 
 # Autor

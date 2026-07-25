@@ -44,3 +44,13 @@ La arquitectura fue diseñada para permitir la sustitución del servicio WordPre
 - La configuración general de Docker Compose.
 
 Esto reduciría significativamente el esfuerzo de migración.
+
+## Justificación de la alternativa utilizada
+
+El documento de la prueba permite implementar una aplicación alternativa cuando no sea posible desplegar Pressbooks, siempre que se expliquen las razones técnicas y el enfoque adoptado.
+
+Durante el desarrollo se realizó una investigación de la documentación oficial y un intento de implementación. Se comprobó que Pressbooks no proporciona una imagen Docker oficial lista para usar y que su instalación requiere un entorno PHP configurado con dependencias adicionales.
+
+Con el fin de entregar una solución funcional dentro del tiempo disponible, se implementó WordPress como plataforma compatible. Esta decisión permitió demostrar el despliegue mediante Docker Compose, la integración con MariaDB, la persistencia mediante volúmenes y la comunicación entre servicios.
+
+La arquitectura diseñada facilita una futura sustitución del servicio WordPress por Pressbooks sin modificar la base de datos, la red ni la estructura general del proyecto.
