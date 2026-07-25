@@ -92,3 +92,22 @@ Antes de iniciar la instalación se revisó la documentación oficial de Pressbo
 - Posibles limitaciones.
 
 Esta revisión permitió planificar la arquitectura antes de comenzar la implementación.
+
+## Estrategia de implementación
+
+Se seguirá una estrategia incremental.
+
+1. Preparar la infraestructura.
+2. Validar MariaDB.
+3. Intentar implementar Pressbooks.
+4. Si la implementación presenta limitaciones técnicas dentro del tiempo de la prueba, documentar las dificultades y utilizar una alternativa compatible, tal como permite el documento de la prueba.
+
+Esta decisión busca priorizar una solución funcional, documentada y justificable.
+
+## Implementación temporal
+
+Durante la investigación se identificó que Pressbooks no dispone de una imagen Docker oficial lista para desplegar y que su instalación está orientada a un entorno PHP/WordPress con dependencias adicionales.
+
+Por esta razón se implementó WordPress como plataforma compatible para demostrar la arquitectura solicitada.
+
+La infraestructura fue diseñada para que Pressbooks pueda sustituir posteriormente este componente reutilizando MariaDB, la red Docker y los volúmenes existentes.

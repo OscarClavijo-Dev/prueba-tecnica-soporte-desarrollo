@@ -38,9 +38,30 @@ services:
     networks:
       - backend
 
+  wordpress:
+    image: wordpress:php8.2-apache
+    container_name: wordpress_app
+    restart: unless-stopped
+    depends_on:
+      - mariadb
+
+    environment:
+      WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+
+    ports:
+      - "8080:80"
+
+    volumes:
+      - wordpress_data:/var/www/html
+    networks:
+      - backend
+
 volumes:
   postgres_data:
   mariadb_data:
-
+  wordpress_data:
 networks:
   backend:
