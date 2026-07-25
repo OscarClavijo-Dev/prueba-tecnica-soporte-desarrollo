@@ -21,11 +21,11 @@ Diseñar e implementar una infraestructura basada en Docker Compose que permita 
 
 ## Estado del proyecto
 
-| Nivel | Estado |
+|| Nivel | Estado |
 |--------|--------|
-| Nivel 1 | ✅ Completado |
-| Nivel 2 | 🔄 En implementación |
-| Nivel 3 | ⏳ Pendiente |
+| Nivel 1 | ✅ Finalizado |
+| Nivel 2 | ✅ Finalizado |
+| Nivel 3 | 🟡 Configuración inicial completada |
 | Nivel 4 | ⏳ Pendiente |
 | Nivel 5 | ⏳ Pendiente |
 
@@ -33,7 +33,7 @@ Diseñar e implementar una infraestructura basada en Docker Compose que permita 
 
 # Arquitectura
 
-## Arquitectura
+
 
 ```text
                 Usuario
@@ -81,8 +81,9 @@ La arquitectura fue diseñada para permitir reemplazar posteriormente WordPress 
 - ✅ PostgreSQL
 - ✅ MariaDB
 - ✅ WordPress (Infraestructura preparada)
-- ⏳ FastAPI
-- ⏳ API Externa
+- ✅ Entorno virtual Python (.venv)
+- ✅ Dependencias iniciales de FastAPI
+- ✅ requirements.txt
 
 ## Documentación
 
