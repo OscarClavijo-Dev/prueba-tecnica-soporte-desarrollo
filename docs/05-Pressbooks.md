@@ -111,3 +111,38 @@ Durante la investigación se identificó que Pressbooks no dispone de una imagen
 Por esta razón se implementó WordPress como plataforma compatible para demostrar la arquitectura solicitada.
 
 La infraestructura fue diseñada para que Pressbooks pueda sustituir posteriormente este componente reutilizando MariaDB, la red Docker y los volúmenes existentes.
+
+### Incidencia durante la validación
+
+Al intentar acceder a MariaDB utilizando el comando:
+
+```bash
+mysql -u pressbooks -p
+
+se obtuvo el siguiente mensaje:
+
+bash: mysql: command not found
+
+## Validación de MariaDB
+
+Durante la validación inicial se intentó utilizar el comando:
+
+```bash
+mysql -u pressbooks -p
+```
+
+El comando no estaba disponible en la imagen oficial `mariadb:11`.
+
+Después de revisar el contenido del contenedor se comprobó que el cliente instalado corresponde al comando:
+
+```bash
+mariadb
+```
+
+La conexión se realizó utilizando:
+
+```bash
+mariadb -u pressbooks -p
+```
+
+Este comportamiento corresponde al cambio realizado en las versiones recientes de MariaDB, donde el cliente utiliza su propio nombre en lugar del alias `mysql`.

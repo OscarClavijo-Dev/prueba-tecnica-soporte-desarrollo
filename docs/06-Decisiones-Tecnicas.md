@@ -54,3 +54,57 @@ Durante el desarrollo se realizó una investigación de la documentación oficia
 Con el fin de entregar una solución funcional dentro del tiempo disponible, se implementó WordPress como plataforma compatible. Esta decisión permitió demostrar el despliegue mediante Docker Compose, la integración con MariaDB, la persistencia mediante volúmenes y la comunicación entre servicios.
 
 La arquitectura diseñada facilita una futura sustitución del servicio WordPress por Pressbooks sin modificar la base de datos, la red ni la estructura general del proyecto.
+
+## Dificultades encontradas
+
+Durante el proceso se identificaron las siguientes dificultades:
+
+- No existe una imagen Docker oficial mantenida por el proyecto Pressbooks.
+- La instalación oficial está orientada a un servidor configurado manualmente.
+- Es necesario instalar múltiples dependencias adicionales para soportar la generación de libros electrónicos y documentos PDF.
+- La documentación oficial no proporciona un archivo Docker Compose listo para usar.
+- La adaptación completa de Pressbooks requiere una configuración adicional que excede el tiempo previsto para la prueba técnica.
+
+## Integración futura de Pressbooks
+
+La arquitectura fue diseñada para facilitar la integración posterior de Pressbooks.
+
+Actualmente la infraestructura cuenta con:
+
+- Docker Compose.
+- MariaDB.
+- Red Docker.
+- Volúmenes persistentes.
+- WordPress funcionando correctamente.
+
+Para incorporar Pressbooks sería necesario construir una imagen Docker personalizada basada en WordPress o adaptar un entorno PHP compatible con las dependencias oficiales requeridas.
+
+La configuración de la base de datos, la red y la infraestructura existente pueden reutilizarse sin modificaciones importantes.
+
+## Arquitectura final esperada
+
+Arquitectura implementada actualmente:
+
+Usuario
+↓
+WordPress
+↓
+MariaDB
+↓
+FastAPI
+↓
+PostgreSQL
+
+Arquitectura objetivo:
+
+Usuario
+↓
+Pressbooks
+↓
+MariaDB
+↓
+FastAPI
+↓
+PostgreSQL
+
+La diferencia principal consiste en sustituir el servicio WordPress por una instalación de Pressbooks sobre la misma infraestructura.
