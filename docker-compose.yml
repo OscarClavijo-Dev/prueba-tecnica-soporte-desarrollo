@@ -39,7 +39,7 @@ services:
       - backend
 
   wordpress:
-    image: wordpress:php8.2-apache
+    image: wordpress:php8.3-apache
     container_name: wordpress_app
     restart: unless-stopped
     depends_on:
