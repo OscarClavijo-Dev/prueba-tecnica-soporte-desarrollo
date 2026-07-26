@@ -122,3 +122,8 @@ Prueba_Tecnica_Oscar_Clavijo/
 ├── requirements.txt
 ├── docker-compose.yml
 └── README.md
+```
+
+# ERROR 004
+
+Durante la validación de POST /api/users se detectó una violación de restricción NOT NULL en created_at y updated_at. La causa fue que el ORM estaba enviando ambos campos en None. Se corrigió la creación del registro asignando explícitamente timestamps UTC en la capa de servicio y se revalidó el endpoint.

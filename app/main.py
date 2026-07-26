@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
 from app.routers.github import router as github_router
-
+from app.routers import users
 
 app = FastAPI(
     title="Prueba Técnica - API",
@@ -11,7 +11,7 @@ app = FastAPI(
 
 
 app.include_router(github_router)
-
+app.include_router(users.router)
 
 @app.get("/")
 async def root():
