@@ -1,19 +1,18 @@
 from fastapi import FastAPI
 
+from app.routers.github import router as github_router
+
+
 app = FastAPI(
-    title="Prueba Tecnica - API",
-    description="API desarrollada como parte de la prueba tecnica.",
-    version="1.0.0"
+    title="Prueba Técnica - API",
+    description="API desarrollada para la prueba técnica de Soporte y Desarrollo.",
+    version="1.0.0",
 )
 
-@app.get("/")
-def root():
-    return{
-        "message": "Bienvenido a la API de la prueba Tecnica"
-    }
 
-@app.get("/health")
-def health():
-    return{
-        "status": "ok"
-    }
+app.include_router(github_router)
+
+
+@app.get("/")
+async def root():
+    return {"message": "Bienvenido a la API de la prueba Tecnica"}
