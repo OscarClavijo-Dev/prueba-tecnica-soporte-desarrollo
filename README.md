@@ -58,18 +58,19 @@ La arquitectura fue diseñada para permitir reemplazar posteriormente WordPress 
 
 # Tecnologías utilizadas
 
-(| Tecnología     | Uso                      |
-| -------------- | ------------------------ |
-| Docker Engine  | Contenedores             |
-| Docker Compose | Orquestación             |
-| Docker Desktop | Administración           |
-| PostgreSQL 17  | Base de datos API        |
-| MariaDB 11     | Base de datos Pressbooks |
-| WordPress      | Plataforma temporal      |
-| FastAPI        | API propia (pendiente)   |
-| Git            | Versionamiento           |
-| GitHub         | Repositorio              |
-
+| Tecnología | Uso |
+|---|---|
+| Docker Engine | Ejecución de contenedores |
+| Docker Compose | Orquestación de servicios |
+| PostgreSQL 17 | Base de datos de la API |
+| MariaDB 11 | Base de datos de WordPress |
+| WordPress | Alternativa temporal a Pressbooks |
+| FastAPI | API propia |
+| Python | Desarrollo de la API |
+| HTTPX | Consumo de API externa |
+| Git | Control de versiones |
+| GitHub | Repositorio y API externa |
+| Postman | Pruebas de API |
 
 ---
 
@@ -87,15 +88,21 @@ La arquitectura fue diseñada para permitir reemplazar posteriormente WordPress 
 
 ## Documentación
 
+
 | Documento | Descripción |
 |------------|-------------|
-| 01-Configuracion-Git.md | Configuración inicial del repositorio |
-| 02-Docker.md | Instalación de Docker |
-| 03-PostgreSQL.md | Configuración de PostgreSQL |
-| 04-Entorno.md | Configuración del entorno |
-| 05-Pressbooks.md | Investigación e implementación |
-| 06-Decisiones-Tecnicas.md | Justificación de las decisiones |
+| 01-Arquitectura.md | Arquitectura general de la solución |
+| 03-Errores.md | Errores encontrados y soluciones |
+| 04-Instalacion.md | Instalación y configuración del entorno |
+| 05-Pressbooks.md | Investigación e intento de implementación de Pressbooks |
+| 06-Decisiones-Tecnicas.md | Decisiones técnicas y justificaciones |
 | 07-Intento-Implementacion-Pressbooks.md | Evidencia del intento de implementación |
+| 08-API-Externa.md | Planeación inicial de la integración externa |
+| 09-FastAPI.md | Implementación y configuración de FastAPI |
+| 10-API-Externa.md | Desarrollo de la integración con API externa |
+| 11-Incidencias-fastapi.md | Incidencias encontradas durante la implementación de FastAPI |
+| 12-API-GITHUB.md | Configuración e implementación de GitHub API |
+| 13-Pruebas-API-GitHub.md | Evidencias de las pruebas de integración con GitHub |
 
 # Evidencias
 
