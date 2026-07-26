@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS github_users (
+    id BIGSERIAL PRIMARY KEY,
+    github_id BIGINT NOT NULL UNIQUE,
+    login VARCHAR(255) NOT NULL,
+    name VARCHAR(255),
+    email VARCHAR(320),
+    avatar_url TEXT,
+    html_url TEXT,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

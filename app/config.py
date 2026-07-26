@@ -5,6 +5,8 @@ class Settings(BaseSettings):
     postgres_db: str
     postgres_user: str
     postgres_password: str
+    postgres_host: str
+    postgres_port: int
 
     mariadb_database: str
     mariadb_user: str

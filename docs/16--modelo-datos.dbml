@@ -1,0 +1,16 @@
+Table github_users {
+  id bigint [pk, increment, not null]
+  github_id bigint [not null, unique]
+  login varchar(255) [not null]
+  name varchar(255)
+  email varchar(320)
+  avatar_url text
+  html_url text
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes {
+    login 
+    updated_at 
+  }
+}

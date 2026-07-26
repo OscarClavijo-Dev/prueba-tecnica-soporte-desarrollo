@@ -49,8 +49,8 @@ y dificultades encontradas durante el proceso.
 | Nivel 1 - Preparación y Docker | ✅ Finalizado |
 | Nivel 2 - Pressbooks / aplicación principal | ✅ Finalizado mediante alternativa documentada |
 | Nivel 3 - Consumo de API externa | ✅ Finalizado |
-| Nivel 4 - Procesamiento y almacenamiento | 🔄 Siguiente etapa |
-| Nivel 5 - Desarrollo de API propia | 🔄 Base inicial implementada |
+| Nivel 4 - Procesamiento y almacenamiento | ✅ Finalizado |
+| Nivel 5 - Desarrollo de API propia | 🔄 En desarrollo |
 | Nivel 6 - Integración entre componentes | ⏳ Pendiente |
 | Nivel 7 - Publicación | ⏳ Pendiente |
 | Nivel 8 - Documentación y presentación | 🔄 En construcción |
@@ -85,4 +85,27 @@ y dificultades encontradas durante el proceso.
               Nivel 4 - Persistencia
 
 ```
+# Nivel 4 - Procesamiento y almacenamiento
 
+El Nivel 4 implementa la persistencia de información obtenida desde la API de GitHub utilizando PostgreSQL 17.
+
+## Flujo
+
+```text
+GitHub API
+    │
+    │ GET /user
+    ▼
+FastAPI
+    │
+    │ procesamiento
+    ▼
+Servicio de sincronización
+    │
+    │ INSERT / UPDATE
+    ▼
+PostgreSQL 17
+    │
+    ▼
+github_users
+```
