@@ -79,5 +79,46 @@ Docker no pudo iniciar el contenedor porque el puerto 5432 del sistema anfitrió
 - Otro contenedor Docker.
 - Un servicio ejecutándose mediante Podman.
 
-### Estado
 
+# ERROR-003 — ModuleNotFoundError: No module named 'app'
+
+## 1. Información general
+
+| Campo | Detalle |
+|---|---|
+| Identificador | ERROR-002 |
+| Nivel | Nivel 3 — Consumo de API externa |
+| Componente | FastAPI / Servicio GitHub |
+| Tecnología | Python |
+| Entorno | Fedora 44 |
+| Entorno virtual | `.venv` |
+| Archivo ejecutado | `scripts/test_github.py` |
+| Error | `ModuleNotFoundError: No module named 'app'` |
+| Estado | Resuelto |
+
+---
+
+# 2. Contexto
+
+Durante la implementación del Nivel 3 se creó un servicio Python encargado de consumir la API de GitHub.
+
+La estructura del proyecto separa la aplicación principal de los scripts de prueba:
+
+```text
+Prueba_Tecnica_Oscar_Clavijo/
+│
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── config.py
+│   └── services/
+│       ├── __init__.py
+│       └── github_service.py
+│
+├── scripts/
+│   └── test_github.py
+│
+├── .venv/
+├── requirements.txt
+├── docker-compose.yml
+└── README.md
