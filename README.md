@@ -296,18 +296,78 @@ Contiene recursos utilizados para las pruebas y consultas HTTP.
 
 # 7. Requisitos previos
 
-Para ejecutar la solución localmente se requiere:
+La solución está diseñada para ejecutarse localmente en un entorno compatible con Docker y Python. Puede reproducirse en:
 
-* Linux/Fedora u otra distribución compatible.
+* Linux (Fedora, Ubuntu u otra distribución compatible).
+* Windows 10/11 con Docker Desktop.
+* macOS con Docker Desktop.
+
+El entorno utilizado durante el desarrollo y las pruebas fue **Fedora Linux**.
+
+## Requisitos generales
+
+Se requiere:
+
 * Git.
 * Docker.
 * Docker Compose.
 * Python 3.
 * `venv`.
-* pip.
+* `pip`.
 * Navegador web.
-* Conexión a Internet para consumir la API externa.
+* Conexión a Internet para consumir la API externa de GitHub.
 * Token de GitHub configurado mediante variables de entorno.
+
+## Windows
+
+Se recomienda utilizar:
+
+* Windows 10/11.
+* Docker Desktop.
+* Git.
+* Python 3.
+* PowerShell.
+
+Docker Desktop proporciona Docker Engine y Docker Compose.
+
+Comprobar Docker:
+
+```powershell
+docker --version
+docker compose version
+```
+
+Comprobar Python:
+
+```powershell
+python --version
+```
+
+Comprobar Git:
+
+```powershell
+git --version
+```
+
+Crear el entorno virtual:
+
+```powershell
+python -m venv .venv
+```
+
+Activarlo:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+Instalar dependencias:
+
+```powershell
+pip install -r requirements.txt
+```
+
+## Linux / Fedora
 
 Comprobar Docker:
 
@@ -327,6 +387,81 @@ Comprobar Git:
 ```bash
 git --version
 ```
+
+Crear el entorno virtual:
+
+```bash
+python3 -m venv .venv
+```
+
+Activarlo:
+
+```bash
+source .venv/bin/activate
+```
+
+Instalar dependencias:
+
+```bash
+pip install -r requirements.txt
+```
+
+## macOS
+
+Se puede utilizar Docker Desktop junto con Python 3 y Git.
+
+Comprobar Docker:
+
+```bash
+docker --version
+docker compose version
+```
+
+Comprobar Python:
+
+```bash
+python3 --version
+```
+
+Comprobar Git:
+
+```bash
+git --version
+```
+
+Crear el entorno virtual:
+
+```bash
+python3 -m venv .venv
+```
+
+Activarlo:
+
+```bash
+source .venv/bin/activate
+```
+
+Instalar dependencias:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Consideraciones sobre el entorno
+
+Las instrucciones de Docker y los servicios definidos en `docker-compose.yml` son independientes del sistema operativo.
+
+Los comandos relacionados con Python pueden variar ligeramente entre sistemas operativos, especialmente en la activación del entorno virtual y la ejecución de Uvicorn.
+
+La comunicación entre WordPress y FastAPI utiliza:
+
+```text
+http://host.docker.internal:8000/api/users
+```
+
+Esta configuración permite que el contenedor de WordPress acceda al servicio FastAPI ejecutándose en el equipo host y es compatible con Docker Desktop en Windows y macOS.
+
+En Linux, si el entorno Docker utilizado no resuelve automáticamente `host.docker.internal`, puede ser necesario habilitar su resolución mediante la configuración correspondiente de Docker.
 
 ---
 
