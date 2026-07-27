@@ -84,7 +84,7 @@ Diseñar e implementar progresivamente una solución tecnológica que permita de
 | Nivel 5 | Desarrollo de API propia          | ✅ Finalizado                                             |
 | Nivel 6 | Integración entre componentes     | ✅ Finalizado                                             |
 | Nivel 7 | Publicación de la solución        | ✅ Finalizado mediante estrategia alternativa documentada |
-| Nivel 8 | Documentación y presentación      | 🔄 En construcción                                       |
+| Nivel 8 | Documentación y presentación      | ✅ Finalizado                                   |
 
 ---
 
