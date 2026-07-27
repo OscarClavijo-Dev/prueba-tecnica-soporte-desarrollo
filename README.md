@@ -245,7 +245,7 @@ Este servicio es independiente de PostgreSQL.
 
 ## Pruebas
 
-* cURL.
+* curl.
 * Swagger UI / OpenAPI.
 * Insomnia.
 * `php -l`.
